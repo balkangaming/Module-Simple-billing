@@ -55,8 +55,9 @@ function exec_ogp_module()
 					 ' <input type="hidden" name="pg_return_url" value="'.urlencode($this_script.'?m=simple-billing&p=cart').'">'."\n".
 					 ' <input type="hidden" name="pg_cancel_url" value="'.$this_script.'?m=simple-billing&p=cart">'."\n".
 					 ' <input type="hidden" name="pg_notify_url" value="'.$current_folder_url.'modules/simple-billing/paygol-ipn.php">'."\n".
-					 ' <input type="image" name="pg_button" src="https://www.paygol.com/pay-now/images/payment-button.png" border="0" alt="Make payments with Paygol: the easiest way!" title="Make payments with Paygol: the easiest way!">'."\n".
-					 '</form>';
+					 ' <input type="image" name="pg_button" class="paygol" src="https://www.paygol.com/pay-now/images/payment-button.png"'.
+					 ' border="0" onClick="pg_reDirect(this.form)">'."\n".
+					 '</form>';;
 			}
 		}
 	}
