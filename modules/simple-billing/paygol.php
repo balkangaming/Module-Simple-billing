@@ -44,7 +44,7 @@ function exec_ogp_module()
 				$this_script = 'http'.$s.'://'.$_SERVER['SERVER_NAME'].$p.$_SERVER['SCRIPT_NAME'];
 				$current_folder_url = str_replace( curPageName(), "", $this_script);
 				
-				echo '<script src="http://www.paygol.com/micropayment/js/paygol.js" type="text/javascript"></script>'.
+				echo '<script src="https://www.paygol.com/pay" type="text/javascript"></script>'.
 					 '<form name="pg_frm" method="post" action="https://www.paygol.com/pay" >'.
 				     ' <input type="hidden" name="pg_serviceid" value="'.$settings['paygol_service_id'].'">'."\n".
 					 ' <input type="hidden" name="pg_currency" value="'.$settings['currency'].'">'."\n".
