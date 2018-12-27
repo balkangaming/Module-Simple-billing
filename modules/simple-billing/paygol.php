@@ -3,6 +3,7 @@ function curPageName()
 {
 	return substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 }
+
 function exec_ogp_module()
 {
 	global $db,$view;
@@ -44,9 +45,9 @@ function exec_ogp_module()
 				$this_script = 'http'.$s.'://'.$_SERVER['SERVER_NAME'].$p.$_SERVER['SCRIPT_NAME'];
 				$current_folder_url = str_replace( curPageName(), "", $this_script);
 				
-				echo '<script src="http://www.paygol.com/micropayment/js/paygol.js" type="text/javascript"></script>'.
+				echo '<script src="https://www.paygol.com/pay" type="text/javascript"></script>'.
 					 '<form name="pg_frm" method="post" action="https://www.paygol.com/pay" >'.
-				     ' <input type="hidden" name="pg_serviceid" value="'.$settings['paygol_service_id'].'">'."\n".
+				         ' <input type="hidden" name="pg_serviceid" value="'.$settings['paygol_service_id'].'">'."\n".
 					 ' <input type="hidden" name="pg_currency" value="'.$settings['currency'].'">'."\n".
 					 ' <input type="hidden" name="pg_name" value=\''.$cart['name'].'\'>'."\n".
 					 ' <input type="hidden" name="pg_custom" value="'.$cart_id.'">'."\n".
@@ -54,9 +55,9 @@ function exec_ogp_module()
 					 ' <input type="hidden" name="pg_return_url" value="'.urlencode($this_script.'?m=simple-billing&p=cart').'">'."\n".
 					 ' <input type="hidden" name="pg_cancel_url" value="'.$this_script.'?m=simple-billing&p=cart">'."\n".
 					 ' <input type="hidden" name="pg_notify_url" value="'.$current_folder_url.'modules/simple-billing/paygol-ipn.php">'."\n".
-					 ' <input type="image" name="pg_button" class="paygol" src="http://www.paygol.com/micropayment/img/buttons/150/black_en_pbm.png"'.
+					 ' <input type="image" name="pg_button" class="paygol" src="https://www.paygol.com/pay-now/images/payment-button.png"'.
 					 ' border="0" onClick="pg_reDirect(this.form)">'."\n".
-					 '</form>';
+					 '</form>';;
 			}
 		}
 	}
